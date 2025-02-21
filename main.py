@@ -1,5 +1,4 @@
 import streamlit as ui
-from dotenv import load_dotenv
 from openai import OpenAI
 
 ui.set_page_config(
@@ -9,9 +8,7 @@ ui.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-load_dotenv()
-
-openai_client = OpenAI()
+openai_client = OpenAI(api_key=ui.secrets["OPENAI_API_KEY"])
 
 ui.title("✈️ Our first travel AI Agent!!")
 
